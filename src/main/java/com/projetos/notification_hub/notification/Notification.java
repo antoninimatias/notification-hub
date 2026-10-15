@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 
 import java.time.Instant;
 
-@Entity(name = "notification")
+@Entity
+@Table(name = "notification")
 public class Notification {
 
     @Id
@@ -30,10 +31,6 @@ public class Notification {
         if (this.status == null) {
             this.status = NotificationStatus.PENDING;
         }
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getId() {
@@ -74,10 +71,6 @@ public class Notification {
 
     public Instant getCreatedAt() {
         return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
     }
 
     public Instant getSentAt() {
