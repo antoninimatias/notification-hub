@@ -22,7 +22,7 @@ public class Notification {
     private NotificationStatus status;
 
     private Instant createdAt;
-    private Instant sendAt;
+    private Instant sentAt;
 
     @PrePersist
     void prePersist() {
@@ -80,11 +80,11 @@ public class Notification {
         this.createdAt = createdAt;
     }
 
-    public Instant getSendAt() {
-        return sendAt;
+    public Instant getSentAt() {
+        return sentAt;
     }
 
-    public void setSendAt(Instant sendAt) {
-        this.sendAt = sendAt;
+    public void setSentAt(Instant sentAt) {
+        this.sentAt = sentAt;
     }
 }
