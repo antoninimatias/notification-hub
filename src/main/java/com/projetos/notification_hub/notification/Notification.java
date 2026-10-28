@@ -25,6 +25,15 @@ public class Notification {
     private Instant createdAt;
     private Instant sentAt;
 
+    protected Notification() {
+    }
+
+    public Notification(String recipient, Channel channel, String message) {
+        this.recipient = recipient;
+        this.channel = channel;
+        this.message = message;
+    }
+
     @PrePersist
     void prePersist() {
         this.createdAt = Instant.now();
@@ -41,24 +50,12 @@ public class Notification {
         return recipient;
     }
 
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
     public Channel getChannel() {
         return channel;
     }
 
-    public void setChannel(Channel channel) {
-        this.channel = channel;
-    }
-
     public String getMessage() {
         return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public NotificationStatus getStatus() {
